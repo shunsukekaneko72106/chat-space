@@ -33,6 +33,7 @@ Things you may want to cover:
 |username|string|null: false|
 - has_many :tweets
 - has_many :groups
+- has_many :groups_tweets
 
 ## tweetsテーブル
 |Column|Type|Options|
@@ -42,23 +43,23 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :groups
+- has_many :groups_tweets
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |groups_name|string|null: false|
-|groups_member|string|null: false|
+|user_id|string|null: false|
 ### Association
 - has_many :groups_tweets
-- has_many :tweets
+- belongs_to :user
 
 ## groups_tweetsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text_id|integer|null: false, foreign_key: true|
 |image_id|integer|null: false, foreign_key: true|
-|groups_member_id|integer|null: false, foreign_key: true|
+|groups_name_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :tweet
