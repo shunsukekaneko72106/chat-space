@@ -30,9 +30,11 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
+|name|string|null: false|
 - has_many :tweets
 - has_many :groups_users
+- has_many :groups
+
 
 ## tweetsテーブル
 |Column|Type|Options|
@@ -42,19 +44,21 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+- has_many :groups
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groups_name|string|null: false|
+|name|string|null: false|
 ### Association
 - has_many :groups_users
 - has_many  :tweets,  through:  :groups_users
+- has_many :users
 
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groups_name_id|integer|null: false, foreign_key: true|
+|groups_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
