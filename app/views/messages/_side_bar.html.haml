@@ -13,10 +13,11 @@
             %i.fas.fa-user-edit
   .groups
     - current_user.groups.each do |group|
-      = link_to "#", class:"group" do
+      = link_to group_messages_path(group) do
+
         %p.group__group-name
           = group.name
         %p.group__group-message
-          メッセージはありません
+          = group.show_last_message
          
-
+      -# = link_to "#", class:"group" do
