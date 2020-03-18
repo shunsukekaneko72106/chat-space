@@ -3,10 +3,10 @@
     %ul
       %li.chat-main__group-info-name
         = @group.name
-      %li.chat-main__group-info-member :Menber
+      %li.chat-main__group-info-member Menber:
       - @group.users.each do |user|
-        = user.name
-      
+        .chat-main__group-info-member
+          = user.name
     .chat-edit
       = link_to "/groups/#{@group.id}/edit", class:"edit" do
         %p.edit-btn Edit
