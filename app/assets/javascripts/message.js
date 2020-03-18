@@ -4,15 +4,15 @@ $(function() {
       var html = `<div class="message" data-message-id=` + message.id + `>
          <div class="message-info">
            <div class="upper-message__chat-name">
-            message.user_name
+            ${message.user_name}
            </div>
            <div class="upper-message__chat-date">
-            message.created_at
+            ${message.created_at}
            </div>
          </div>
          <div class="lower-message">
            <p class="lower-message__content">
-            message.content
+             ${message.content}
            </p>
            <img src="` + message.image + `" class="lower-message__image" >
          </div>
@@ -21,15 +21,15 @@ $(function() {
       var html = `<div class="message" data-message-id=` + message.id + `>
          <div class="message-info">
            <div class="upper-message__chat-name">
-            message.user_name 
+            ${message.user_name}
            </div>
            <div class="upper-message__chat-date">
-            message.created_at
+            ${message.created_at}
            </div>
          </div>
          <div class="lower-message">
            <p class="lower-message__content">
-            message.content
+            ${message.content}
            </p>
          </div>
        </div>`
@@ -37,10 +37,10 @@ $(function() {
       var html = `<div class="message" data-message-id=` + message.id + `>
          <div class="message-info">
            <div class="upper-message__chat-name">
-            message.user_name 
+            ${message.user_name}
            </div> 
            <div class="upper-message__chat-date"> 
-            message.created_at 
+            ${message.created_at}
            </div> 
          </div> 
          <div class="lower-message"> 
