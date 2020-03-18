@@ -65,11 +65,13 @@ $(function() {
       .done(function(data){
         var html = buildHTML(data);
         $('.messages').append(html); 
+        $('.new_message')[0].reset();
         $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight }, "first");
         $('.submit-btn').prop('disabled', false);
       })
       .fail(function(){
         alert('error');
+        $('.submit-btn').prop('disabled', false);
       })
     })
   var reloadMessages = function() {
